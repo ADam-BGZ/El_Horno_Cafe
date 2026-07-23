@@ -26,6 +26,26 @@ html {
   }
 }
 
+[data-reduced-motion] .hero__eyebrow,
+[data-reduced-motion] .hero__title,
+[data-reduced-motion] .hero__subtitle,
+[data-reduced-motion] .hero__cta,
+[data-reduced-motion] .hero__scroll-hint {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+[data-reduced-motion] .process__step {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+[data-reduced-motion] .card {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-18);

@@ -5,6 +5,9 @@ import { getMenuCategories, getTotalPlatCount, type ProcessedCategory, type Proc
 import { prefersReducedMotion } from './utils';
 import { isWebGLAvailable, showFallbackSVG } from './scene/fallback';
 
+let cleanupProcess: (() => void) | null = null;
+let cleanupMenuGrid: (() => void) | null = null;
+
 function createCardPlaceholder(): string {
   return `<div class="card-placeholder"></div>`;
 }
@@ -110,14 +113,43 @@ function initHeroSceneLazy(): void {
   });
 }
 
+function initMotionLazy(): void {
+  if (prefersReducedMotion()) {
+    document.body.setAttribute('data-reduced-motion', '');
+    return;
+  }
+
+  import('./motion/hero').then(({ initHeroMotion }) => {
+    initHeroMotion();
+  });
+
+  import('./motion/process').then(({ initProcessScroll, cleanupProcessScroll }) => {
+    initProcessScroll();
+    cleanupProcess = cleanupProcessScroll;
+  });
+
+  import('./motion/menu-grid').then(({ initMenuGridReveals, cleanupMenuGridReveals }) => {
+    initMenuGridReveals();
+    cleanupMenuGrid = cleanupMenuGridReveals;
+  });
+}
+
 function init(): void {
   renderMenu();
   renderProcess();
   initHeroSceneLazy();
+  initMotionLazy();
 }
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
   init();
+}
+
+if (import.meta.hot) {
+  import.meta.hot.dispose(() => {
+    cleanupProcess?.();
+    cleanupMenuGrid?.();
+  });
 }
