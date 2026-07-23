@@ -1,0 +1,172 @@
+{
+  "Sandwichs": [
+    {
+      "name": "Sandwich Poulet",
+      "description": "Mayonnaise, mesclun salade, poulet, oignons caramélisé, fromage",
+      "price": "45,00 MAD",
+      "image_url": "photos/unnamed (9).jpg"
+    },
+    {
+      "name": "Sandwich Thon",
+      "description": null,
+      "price": "35,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Sandwich Saumon Fumé",
+      "description": "Guacamole, roquette, saumon fumé, fromage",
+      "price": "65,00 MAD",
+      "image_url": "photos/unnamed (12).jpg"
+    },
+    {
+      "name": "Sandwich Viande",
+      "description": null,
+      "price": "50,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Sandwich Calamar",
+      "description": null,
+      "price": "60,00 MAD",
+      "image_url": null
+    }
+  ],
+  "Pasticcio": [
+    {
+      "name": "Pasticcio Poulet",
+      "description": "Poulet, sauce",
+      "price": "50,00 MAD",
+      "image_url": "photos/unnamed (11).jpg"
+    },
+    {
+      "name": "Pasticcio Bolognaise",
+      "description": "Viande hachée",
+      "price": "50,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Pasticcio Fruit De Mer",
+      "description": "Frites, fruits de mer",
+      "price": "55,00 MAD",
+      "image_url": null
+    }
+  ],
+  "Calzone": [
+    {
+      "name": "Calzone Poulet Champignons",
+      "description": "Poulet, champignons",
+      "price": "85,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Calzone Fruit De Mer",
+      "description": "Fruits de mer",
+      "price": "100,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Galzone Thon",
+      "description": null,
+      "price": "55,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Galzone Bolognaise",
+      "description": null,
+      "price": "65,00 MAD",
+      "image_url": null
+    }
+  ],
+  "Patisserie": [
+    {
+      "name": "San Sébastien",
+      "description": null,
+      "price": "25,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Citron",
+      "description": null,
+      "price": "27,50 MAD",
+      "image_url": "photos/unnamed (4).jpg"
+    },
+    {
+      "name": "Love",
+      "description": null,
+      "price": "24,00 MAD",
+      "image_url": "photos/unnamed (10).jpg"
+    },
+    {
+      "name": "Coconut",
+      "description": null,
+      "price": "25,00 MAD",
+      "image_url": null
+    }
+  ],
+  "Couscous": [
+    {
+      "name": "Couscous Végétarien",
+      "description": null,
+      "price": "49,50 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Couscous Viande",
+      "description": null,
+      "price": "66,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Couscous Poulet",
+      "description": null,
+      "price": "55,00 MAD",
+      "image_url": null
+    }
+  ],
+  "Burger": [
+    {
+      "name": "Hamburger Double",
+      "description": "Double viande hachée,fromage cheddar, oignons caramélisée, laitue,tomate,carnicho,frites",
+      "price": "60,00 MAD",
+      "image_url": null
+    }
+  ],
+  "Pizza": [
+    {
+      "name": "Pizza Fruit De Mer",
+      "description": "Sauce tomate, mozzarella, mixte de fruits de mer, olive noir, origan",
+      "price": "100,00 MAD",
+      "image_url": "photos/unnamed (8).jpg"
+    },
+    {
+      "name": "Pizza Thon",
+      "description": "Sauce tomate,mozzarella,thon,olives,noires,origan",
+      "price": "65,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Pizza 4 Saisons",
+      "description": "Sauce tomate, mozzarella,viande hachée,fruits de mer ,poulet,fromage,origan",
+      "price": "90,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Pizza Margharita",
+      "description": "Sauce tomate,mozarella,burrito,roquettes",
+      "price": "55,00 MAD",
+      "image_url": null
+    },
+    {
+      "name": "Pizza Poulet Champignons",
+      "description": "Poulet,champignon,crème fraîche, origan, mozzarella",
+      "price": "85,00 MAD",
+      "image_url": "photos/unnamed (14).jpg"
+    },
+    {
+      "name": "Pizza 4 Fromages",
+      "description": "Sauce blanche, mozzarella, fromage bleu,fromage gouda,fromage rouge,fromage chévre",
+      "price": "85,00 MAD",
+      "image_url": "photos/unnamed (5).jpg"
+    }
+  ]
+}

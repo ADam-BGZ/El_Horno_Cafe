@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Horno — Café, Restaurant, Pizzeria, Boulangerie & Pâtisserie. Four à bois, fait maison. Tétouan, tous les jours 07:00–23:30." />
+  <title>El Horno — Café · Restaurant · Pizzeria · Boulangerie & Pâtisserie</title>
+
+  <!-- Preload fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Critical CSS — prevent FOUT */
+    body { margin: 0; background: #16140F; }
+    .hero { min-height: 100vh; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Navigation principale">
+    <a href="#" class="nav__logo">El Horno</a>
+    <div class="nav__links">
+      <a href="#carte" class="nav__link">Carte</a>
+      <a href="#process" class="nav__link">Process</a>
+      <a href="#a-propos" class="nav__link">À Propos</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero__content">
+      <span class="hero__eyebrow">Tétouan — 07:00–23:30</span>
+      <h1 class="hero__title">El Horno</h1>
+      <p class="hero__subtitle">
+        Café · Restaurant · Pizzeria<br />
+        Boulangerie & Pâtisserie
+      </p>
+      <a href="#carte" class="hero__cta">Voir la carte</a>
+    </div>
+    <span class="hero__scroll-hint" aria-hidden="true">↓ scroll</span>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="process__header">
+        <span class="label">Le process</span>
+        <h2 class="display-md">Du geste à l'assiette</h2>
+      </div>
+      <div class="process__steps" id="process-steps">
+        <!-- Rendered by main.ts -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu section" id="carte">
+    <div class="container">
+      <div class="process__header">
+        <span class="label">La carte — <span id="menu-count"></span> plats</span>
+        <h2 class="display-md">Notre carte</h2>
+      </div>
+      <div id="menu-categories">
+        <!-- Rendered by main.ts -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="a-propos">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__content">
+          <span class="label">À propos</span>
+          <h2 class="display-md">Le four, au centre</h2>
+          <p class="body-lg">
+            Four à bois. Fait maison. Ouvert tous les jours de 7h à 23h30.
+          </p>
+          <p class="body-lg">
+            27 plats, 7 catégories — sandwichs, pasticcio, calzone, pâtisserie, couscous, burger, pizza.
+          </p>
+          <div class="about__stats">
+            <div class="about__stat">
+              <span class="about__stat-value">4,4</span>
+              <span class="about__stat-label">Note Google — 229 avis</span>
+            </div>
+            <div class="about__stat" style="margin-top: 1.5rem;">
+              <span class="about__stat-value">50–100</span>
+              <span class="about__stat-label">MAD — gamme de prix</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__image" id="about-image">
+          <!-- Photo ou placeholder -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__brand-name">El Horno</span>
+          <span class="footer__brand-tagline">Café · Restaurant · Pizzeria · Boulangerie & Pâtisserie</span>
+          <span class="footer__brand-tagline">Al Wilaya, Tétouan 93000</span>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Horaires</span>
+          <span class="footer__link">Tous les jours</span>
+          <span class="footer__link">07:00 – 23:30</span>
+          <span class="footer__link" style="margin-top: 0.75rem; font-size: var(--text-13); opacity: 0.6;">Terrasse · Menu enfant</span>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Contact</span>
+          <a href="tel:+212666342286" class="footer__link">06 66 34 22 86</a>
+          <a href="https://maps.google.com/?q=Al+Wilaya+Tétouan+93000" target="_blank" rel="noopener noreferrer" class="footer__cta">Itinéraire</a>
+          <a href="tel:+212666342286" class="footer__cta" style="margin-left: 0.5rem;">Appeler</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        © 2026 El Horno — Tous droits réservés
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

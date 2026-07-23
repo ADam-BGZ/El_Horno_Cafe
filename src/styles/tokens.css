@@ -1,0 +1,76 @@
+/* ============================================
+   EL HORNO — Design Tokens
+   Source: 01-DESIGN-SYSTEM.md
+   ============================================ */
+
+:root {
+  /* --- Palette --- */
+  --horno-blanc: #FAFAF7;
+  --horno-noir: #16140F;
+  --horno-brique: #B14B2C;
+  --horno-braise: #E8DCC8;
+  --horno-suie: #3A362E;
+  --horno-farine: #F1EEE4;
+
+  /* --- Typographie --- */
+  /* Display: grotesque géométrique à forte personnalité (Space Grotesk, OFL) */
+  --font-display: 'Space Grotesk', 'Arial Narrow', Impact, sans-serif;
+  /* Body: sans-serif neutre (Inter) */
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* --- Échelle typo (desktop) --- */
+  --text-96: 6rem;     /* 96px */
+  --text-64: 4rem;     /* 64px */
+  --text-40: 2.5rem;   /* 40px */
+  --text-24: 1.5rem;   /* 24px */
+  --text-18: 1.125rem; /* 18px */
+  --text-16: 1rem;     /* 16px */
+  --text-13: 0.8125rem;/* 13px */
+
+  /* --- Letter-spacing --- */
+  --ls-wide: 0.12em;
+  --ls-label: 0.08em;
+  --ls-tight: -0.02em;
+
+  /* --- Grille --- */
+  --grid-columns: 12;
+  --grid-gap: 1.5rem;
+  --gutter: 64px;        /* desktop */
+  --gutter-mobile: 24px; /* mobile */
+  --card-ratio: 1;       /* carré 1:1 */
+
+  /* --- Transitions --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 800ms;
+
+  /* --- Z-index --- */
+  --z-nav: 100;
+  --z-hero: 10;
+  --z-overlay: 50;
+
+  /* --- Placeholder card --- */
+  --placeholder-bg: var(--horno-braise);
+  --placeholder-icon: var(--horno-suie);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  :root {
+    --text-96: 3.5rem;
+    --text-64: 2.5rem;
+    --text-40: 1.75rem;
+    --grid-gap: 1rem;
+    --gutter: var(--gutter-mobile);
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --text-96: 2.75rem;
+    --text-64: 2rem;
+    --text-40: 1.5rem;
+  }
+}
