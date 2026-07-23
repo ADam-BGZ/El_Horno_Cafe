@@ -93,9 +93,9 @@ function renderProcess(): void {
   if (!container) return;
 
   container.innerHTML = [
-    createProcessStep('01', 'Pétrissage', 'La pâte est pétrie à la main, chaque jour.', null),
-    createProcessStep('02', 'Façonnage', 'Chaque pizza, calzone, pasticcio est façonné à la main.', null),
-    createProcessStep('03', 'Cuisson au four', 'Le four à bois donne cette saveur unique — El Horno.', null),
+    createProcessStep('01', 'Pétrissage', 'La pâte est pétrie à la main, chaque jour.', '/photos/unnamed%20(2).jpg'),
+    createProcessStep('02', 'Façonnage', 'Chaque pizza, calzone, pasticcio est façonné à la main.', '/photos/unnamed%20(3).jpg'),
+    createProcessStep('03', 'Cuisson au four', 'Le four à bois donne cette saveur unique — El Horno.', '/photos/unnamed.jpg'),
   ].join('');
 }
 
