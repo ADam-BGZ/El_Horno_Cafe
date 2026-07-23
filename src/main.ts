@@ -2,6 +2,8 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/sections.css';
 import { getMenuCategories, getTotalPlatCount, type ProcessedCategory, type ProcessedMenuItem } from './data/menu';
+import { prefersReducedMotion } from './utils';
+import { isWebGLAvailable, showFallbackSVG } from './scene/fallback';
 
 function createCardPlaceholder(): string {
   return `<div class="card-placeholder"></div>`;
@@ -94,9 +96,24 @@ function renderProcess(): void {
   ].join('');
 }
 
+function initHeroSceneLazy(): void {
+  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
+  if (!canvas) return;
+
+  if (prefersReducedMotion() || !isWebGLAvailable()) {
+    showFallbackSVG(canvas.parentElement ?? canvas);
+    return;
+  }
+
+  import('./scene/hero-oven').then(({ initHeroScene }) => {
+    initHeroScene(canvas);
+  });
+}
+
 function init(): void {
   renderMenu();
   renderProcess();
+  initHeroSceneLazy();
 }
 
 if (document.readyState === 'loading') {
