@@ -39,6 +39,7 @@ function getFallbackDescription(name: string): string {
 
 function getImageUrl(url: string | null): string | null {
   if (!url) return null;
+  if (url.startsWith('http://') || url.startsWith('https://')) return url;
   return '/' + url.replace(/ /g, '%20');
 }
 

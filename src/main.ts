@@ -13,6 +13,7 @@ function createCardPlaceholder(): string {
 }
 
 function createCard(item: ProcessedMenuItem): string {
+  const isExternal = item.imageUrl?.startsWith('http') ?? false;
   const imageHtml = item.hasImage && item.imageUrl
     ? `<img
         class="card__image"
@@ -22,6 +23,7 @@ function createCard(item: ProcessedMenuItem): string {
         decoding="async"
         width="400"
         height="400"
+        ${isExternal ? 'referrerpolicy="no-referrer"' : ''}
       />`
     : createCardPlaceholder();
 
