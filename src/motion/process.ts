@@ -22,34 +22,60 @@ export function initProcessScroll(): void {
   const step1 = steps[1]!;
   const step2 = steps[2]!;
 
-  const pinTrigger = ScrollTrigger.create({
-    trigger: section,
-    start: 'top top',
-    end: '+=200%',
-    pin: true,
-    scrub: 0.5,
-    animation: gsap.timeline()
-      .to(step0, {
-        opacity: 1,
-        y: 0,
-        duration: 0.4,
-        ease: 'power2.out',
-      })
-      .to(step1, {
-        opacity: 1,
-        y: 0,
-        duration: 0.4,
-        ease: 'power2.out',
-      }, '-=0.1')
-      .to(step2, {
-        opacity: 1,
-        y: 0,
-        duration: 0.4,
-        ease: 'power2.out',
-      }, '-=0.1'),
-  });
+  const animation = gsap.timeline()
+    .to(step0, {
+      opacity: 1,
+      y: 0,
+      duration: 0.4,
+      ease: 'power2.out',
+    })
+    .to(step1, {
+      opacity: 1,
+      y: 0,
+      duration: 0.4,
+      ease: 'power2.out',
+    }, '-=0.1')
+    .to(step2, {
+      opacity: 1,
+      y: 0,
+      duration: 0.4,
+      ease: 'power2.out',
+    }, '-=0.1');
 
-  triggers.push(pinTrigger);
+  ScrollTrigger.matchMedia({
+    // Mobile (< 640px): reveal steps on scroll without pinning
+    '(max-width: 639px)': () => {
+      const revealTriggers = Array.from(steps).map((step) => {
+        return ScrollTrigger.create({
+          trigger: step,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            gsap.to(step, {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              ease: 'power2.out',
+            });
+          },
+        });
+      });
+      triggers.push(...revealTriggers);
+    },
+
+    // Tablet+ (≥ 640px): pin the section with scrub timeline
+    '(min-width: 640px)': () => {
+      const pinTrigger = ScrollTrigger.create({
+        trigger: section,
+        start: 'top top',
+        end: '+=200%',
+        pin: true,
+        scrub: 0.5,
+        animation,
+      });
+      triggers.push(pinTrigger);
+    },
+  });
 
   let resizeTimer: ReturnType<typeof setTimeout>;
   const onResize = () => {

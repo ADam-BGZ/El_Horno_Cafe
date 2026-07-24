@@ -1,6 +1,10 @@
 /* ============================================
    EL HORNO — Design Tokens
    Source: 01-DESIGN-SYSTEM.md
+
+   Breakpoints (used in @media queries below):
+     --bp-tablet:  640px
+     --bp-desktop: 1024px
    ============================================ */
 
 :root {
@@ -20,11 +24,11 @@
   --font-display: 'Space Grotesk', 'Arial Narrow', Impact, sans-serif;
   --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
-  /* --- Échelle typo (desktop) --- */
-  --text-96: 6rem;
-  --text-64: 4rem;
-  --text-40: 2.5rem;
-  --text-24: 1.5rem;
+  /* --- Échelle typo (mobile-first: base = mobile) --- */
+  --text-96: 2.75rem;
+  --text-64: 2rem;
+  --text-40: 1.5rem;
+  --text-24: 1.25rem;
   --text-18: 1.125rem;
   --text-16: 1rem;
   --text-13: 0.8125rem;
@@ -47,9 +51,8 @@
 
   /* --- Grille --- */
   --grid-columns: 12;
-  --grid-gap: 1.5rem;
-  --gutter: 64px;
-  --gutter-mobile: 24px;
+  --grid-gap: 1rem;
+  --gutter: 24px;
   --card-ratio: 1;
 
   /* --- Bordures --- */
@@ -83,21 +86,26 @@
   --placeholder-icon: var(--horno-suie);
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
+/* --- Tablet (min-width: 640px) --- */
+@media (min-width: 640px) {
   :root {
     --text-96: 3.5rem;
     --text-64: 2.5rem;
     --text-40: 1.75rem;
-    --grid-gap: 1rem;
-    --gutter: var(--gutter-mobile);
+    --text-24: 1.5rem;
+    --grid-gap: 1.25rem;
+    --gutter: 32px;
   }
 }
 
-@media (max-width: 375px) {
+/* --- Desktop (min-width: 1024px) --- */
+@media (min-width: 1024px) {
   :root {
-    --text-96: 2.75rem;
-    --text-64: 2rem;
-    --text-40: 1.5rem;
+    --text-96: 6rem;
+    --text-64: 4rem;
+    --text-40: 2.5rem;
+    --text-24: 1.75rem;
+    --grid-gap: 1.5rem;
+    --gutter: 64px;
   }
 }
