@@ -207,7 +207,7 @@
   letter-spacing: var(--ls-label);
   text-transform: uppercase;
   font-weight: 500;
-  opacity: 0.85;
+  opacity: 0.7;
 }
 
 .hero__title {
@@ -216,6 +216,7 @@
   line-height: 0.95;
   text-transform: uppercase;
   letter-spacing: var(--ls-tight);
+  font-weight: 700;
 }
 
 .hero__subtitle {
@@ -224,7 +225,8 @@
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: var(--ls-wide);
-  opacity: 0.85;
+  font-weight: 400;
+  opacity: 0.95;
 }
 
 .hero__cta {
@@ -289,7 +291,7 @@
 
 .process__header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-48);
 }
 
 .process__steps {
@@ -307,9 +309,11 @@
   font-family: var(--font-display);
   font-size: var(--text-64);
   color: var(--horno-brique);
-  opacity: 0.4;
+  opacity: 0.25;
   line-height: 1;
   margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: var(--ls-tight);
 }
 
 .process__step-image {
@@ -331,6 +335,7 @@
   text-transform: uppercase;
   letter-spacing: var(--ls-wide);
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .process__step-desc {
@@ -349,17 +354,18 @@
 /* --- MENU GRID --- */
 .menu {
   background-color: var(--horno-blanc);
+  border-top: 1px solid var(--horno-braise);
 }
 
 .menu__category {
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-48);
 }
 
 .menu__category-header {
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-32);
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--horno-braise);
 }
@@ -369,6 +375,7 @@
   font-size: var(--text-40);
   text-transform: uppercase;
   letter-spacing: var(--ls-wide);
+  font-weight: 700;
 }
 
 .menu__category-count {
@@ -489,6 +496,8 @@
   font-size: var(--text-64);
   color: var(--horno-brique);
   line-height: 1;
+  font-weight: 700;
+  letter-spacing: var(--ls-tight);
 }
 
 .about__stat-label {
@@ -522,7 +531,7 @@
 .footer {
   background-color: var(--horno-noir);
   color: var(--horno-blanc);
-  padding: 4rem 0;
+  padding: var(--space-64) 0;
 }
 
 .footer__grid {
@@ -542,6 +551,7 @@
   font-size: var(--text-24);
   text-transform: uppercase;
   letter-spacing: var(--ls-wide);
+  font-weight: 700;
 }
 
 .footer__brand-tagline {

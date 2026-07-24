@@ -170,14 +170,14 @@ button {
 }
 
 .section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: var(--space-96);
+  padding-bottom: var(--space-96);
 }
 
 @media (max-width: 768px) {
   .section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
   }
 }
 
