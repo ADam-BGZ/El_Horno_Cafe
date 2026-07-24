@@ -13,7 +13,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  mix-blend-mode: difference;
+  background: linear-gradient(
+    rgba(22, 20, 15, 0.65) 0%,
+    rgba(22, 20, 15, 0) 100%
+  );
   color: var(--horno-blanc);
 }
 
@@ -88,6 +91,18 @@
   opacity: 1;
 }
 
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    rgba(22, 20, 15, 0.4) 0%,
+    rgba(22, 20, 15, 0.55) 50%,
+    rgba(22, 20, 15, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
 .hero__canvas {
   position: absolute;
   inset: 0;
@@ -113,6 +128,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  text-shadow: 0 2px 20px rgba(22, 20, 15, 0.6), 0 1px 4px rgba(22, 20, 15, 0.4);
 }
 
 .hero__eyebrow {
@@ -143,14 +159,14 @@
 .hero__cta {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.875rem 2.5rem;
+  padding: 1.125rem 3.5rem;
   background-color: var(--horno-brique);
   color: var(--horno-blanc);
   font-family: var(--font-body);
-  font-size: var(--text-13);
+  font-size: var(--text-16);
   text-transform: uppercase;
   letter-spacing: var(--ls-label);
-  font-weight: 600;
+  font-weight: 700;
   transition: background-color var(--duration-fast) var(--ease-out);
 }
 

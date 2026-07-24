@@ -27,33 +27,6 @@ function createOvenGeometry(): THREE.Group {
   body.position.y = 1;
   oven.add(body);
 
-  const domeMat = new THREE.MeshStandardMaterial({
-    color: darkBrick,
-    roughness: 0.8,
-    metalness: 0.05,
-    wireframe: true,
-  });
-
-  const dome = new THREE.Mesh(
-    new THREE.SphereGeometry(1.5, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2),
-    domeMat
-  );
-  dome.position.set(0, 2, 0);
-  oven.add(dome);
-
-  const domeSolid = new THREE.Mesh(
-    new THREE.SphereGeometry(1.48, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2),
-    new THREE.MeshStandardMaterial({
-      color: brickColor,
-      roughness: 0.85,
-      metalness: 0.05,
-      transparent: true,
-      opacity: 0.3,
-    })
-  );
-  domeSolid.position.set(0, 2, 0);
-  oven.add(domeSolid);
-
   const doorMat = new THREE.MeshStandardMaterial({
     color: doorColor,
     roughness: 0.9,
@@ -152,7 +125,7 @@ export function initHeroScene(canvas: HTMLCanvasElement): OvenScene {
 
     const elapsed = clock.getElapsedTime();
 
-    oven.rotation.y = Math.sin(elapsed * 0.3) * 0.08;
+    oven.rotation.y = Math.sin(elapsed * 0.2) * 0.05;
 
     if (innerGlow) {
       (innerGlow.material as THREE.MeshBasicMaterial).opacity =
