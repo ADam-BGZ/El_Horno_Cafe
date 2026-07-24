@@ -46,6 +46,11 @@ html {
   clip-path: none !important;
 }
 
+[data-reduced-motion] .hero__cta,
+[data-reduced-motion] .footer__cta {
+  transform: none !important;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-18);
@@ -81,6 +86,27 @@ button {
 :focus-visible {
   outline: 2px solid var(--horno-brique);
   outline-offset: 3px;
+}
+
+/* --- Skip link --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--gutter);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--horno-noir);
+  color: var(--horno-blanc);
+  font-family: var(--font-body);
+  font-size: var(--text-13);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+  text-decoration: none;
+  transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: var(--gutter);
 }
 
 /* --- Typography --- */

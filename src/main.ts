@@ -138,10 +138,74 @@ function initMotionLazy(): void {
   });
 }
 
+function initMobileNav(): void {
+  const hamburger = document.querySelector<HTMLButtonElement>('.nav__hamburger');
+  const navLinks = document.querySelector<HTMLDivElement>('.nav__links');
+  if (!hamburger || !navLinks) return;
+
+  const btn = hamburger;
+  const menu = navLinks;
+  const links = () => Array.from(menu.querySelectorAll<HTMLAnchorElement>('.nav__link'));
+
+  function openMenu(): void {
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Fermer le menu');
+    menu.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    links()[0]?.focus();
+  }
+
+  function closeMenu(): void {
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Ouvrir le menu');
+    menu.classList.remove('is-open');
+    document.body.style.overflow = '';
+    btn.focus();
+  }
+
+  function getFocusableElements(): HTMLElement[] {
+    return [btn, ...links()];
+  }
+
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    if (isOpen) closeMenu();
+    else openMenu();
+  });
+
+  links().forEach((link) => {
+    link.addEventListener('click', () => {
+      if (menu.classList.contains('is-open')) closeMenu();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+      closeMenu();
+      return;
+    }
+
+    if (e.key === 'Tab' && menu.classList.contains('is-open')) {
+      const focusable = getFocusableElements();
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last?.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first?.focus();
+      }
+    }
+  });
+}
+
 function init(): void {
   renderMenu();
   renderProcess();
   initHeroSlideshow();
+  initMobileNav();
   initMotionLazy();
 }
 

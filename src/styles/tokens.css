@@ -12,32 +12,59 @@
   --horno-suie: #3A362E;
   --horno-farine: #F1EEE4;
 
+  /* --- Palette étendue (hover/active states) --- */
+  --horno-brique-hover: #c55a38;
+  --horno-brique-active: #9a3f24;
+
   /* --- Typographie --- */
-  /* Display: grotesque géométrique à forte personnalité (Space Grotesk, OFL) */
   --font-display: 'Space Grotesk', 'Arial Narrow', Impact, sans-serif;
-  /* Body: sans-serif neutre (Inter) */
   --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   /* --- Échelle typo (desktop) --- */
-  --text-96: 6rem;     /* 96px */
-  --text-64: 4rem;     /* 64px */
-  --text-40: 2.5rem;   /* 40px */
-  --text-24: 1.5rem;   /* 24px */
-  --text-18: 1.125rem; /* 18px */
-  --text-16: 1rem;     /* 16px */
-  --text-13: 0.8125rem;/* 13px */
+  --text-96: 6rem;
+  --text-64: 4rem;
+  --text-40: 2.5rem;
+  --text-24: 1.5rem;
+  --text-18: 1.125rem;
+  --text-16: 1rem;
+  --text-13: 0.8125rem;
 
   /* --- Letter-spacing --- */
   --ls-wide: 0.12em;
   --ls-label: 0.08em;
   --ls-tight: -0.02em;
 
+  /* --- Espacement (baseline 8px) --- */
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-96: 6rem;
+
   /* --- Grille --- */
   --grid-columns: 12;
   --grid-gap: 1.5rem;
-  --gutter: 64px;        /* desktop */
-  --gutter-mobile: 24px; /* mobile */
-  --card-ratio: 1;       /* carré 1:1 */
+  --gutter: 64px;
+  --gutter-mobile: 24px;
+  --card-ratio: 1;
+
+  /* --- Bordures --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* --- Ombres --- */
+  --shadow-sm: 0 1px 3px rgba(22, 20, 15, 0.08);
+  --shadow-md: 0 4px 12px rgba(22, 20, 15, 0.1);
+  --shadow-lg: 0 8px 24px rgba(22, 20, 15, 0.12);
+  --shadow-card-hover: 0 8px 32px rgba(22, 20, 15, 0.14);
+
+  /* --- Focus ring --- */
+  --focus-ring: 0 0 0 2px var(--horno-blanc), 0 0 0 4px var(--horno-brique);
 
   /* --- Transitions --- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

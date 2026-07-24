@@ -19,10 +19,18 @@
 </head>
 <body>
 
+  <!-- SKIP LINK -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
   <!-- NAV -->
   <nav class="nav" aria-label="Navigation principale">
     <a href="#" class="nav__logo">El Horno</a>
-    <div class="nav__links">
+    <button class="nav__hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Ouvrir le menu">
+      <span class="nav__hamburger-line"></span>
+      <span class="nav__hamburger-line"></span>
+      <span class="nav__hamburger-line"></span>
+    </button>
+    <div class="nav__links" id="nav-links">
       <a href="#carte" class="nav__link">Carte</a>
       <a href="#process" class="nav__link">Process</a>
       <a href="#a-propos" class="nav__link">À Propos</a>
@@ -31,7 +39,7 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
+  <section class="hero" id="main-content" tabindex="-1">
     <div class="hero__slideshow" aria-hidden="true">
       <img class="hero__slide hero__slide--active" src="/photos/hero-interior-1.jpg" alt="" width="1920" height="1080" />
       <img class="hero__slide" src="/photos/hero-interior-2.jpg" alt="" width="1920" height="1080" />
