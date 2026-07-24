@@ -136,10 +136,28 @@ function initMotionLazy(): void {
   });
 }
 
+function initHeroSlideshow(): void {
+  if (prefersReducedMotion()) return;
+
+  const slides = document.querySelectorAll<HTMLImageElement>('.hero__slide');
+  if (slides.length <= 1) return;
+
+  let current = 0;
+
+  setInterval(() => {
+    const prev = slides[current];
+    current = (current + 1) % slides.length;
+    const next = slides[current];
+    if (prev) prev.classList.remove('hero__slide--active');
+    if (next) next.classList.add('hero__slide--active');
+  }, 5000);
+}
+
 function init(): void {
   renderMenu();
   renderProcess();
   initHeroSceneLazy();
+  initHeroSlideshow();
   initMotionLazy();
 }
 
