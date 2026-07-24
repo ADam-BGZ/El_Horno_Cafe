@@ -103,24 +103,6 @@
   pointer-events: none;
 }
 
-.hero__oven {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 65%;
-  width: auto;
-  object-fit: contain;
-  z-index: var(--z-hero);
-  pointer-events: none;
-  animation: oven-float 6s ease-in-out infinite;
-}
-
-@keyframes oven-float {
-  0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
-  50% { transform: translateX(-50%) translateY(-12px) scale(1.015); }
-}
-
 .hero__fallback {
   position: absolute;
   inset: 0;
@@ -208,15 +190,6 @@
   }
   .hero__slide {
     transition: none;
-  }
-  .hero__oven {
-    animation: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero__oven {
-    height: 50%;
   }
 }
 

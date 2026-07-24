@@ -30,11 +30,9 @@ html {
 [data-reduced-motion] .hero__title,
 [data-reduced-motion] .hero__subtitle,
 [data-reduced-motion] .hero__cta,
-[data-reduced-motion] .hero__scroll-hint,
-[data-reduced-motion] .hero__oven {
+[data-reduced-motion] .hero__scroll-hint {
   opacity: 1 !important;
   transform: none !important;
-  animation: none !important;
 }
 
 [data-reduced-motion] .process__step {
