@@ -3,7 +3,6 @@ import './styles/base.css';
 import './styles/sections.css';
 import { getMenuCategories, getTotalPlatCount, type ProcessedCategory, type ProcessedMenuItem } from './data/menu';
 import { prefersReducedMotion } from './utils';
-import { isWebGLAvailable, showFallbackSVG } from './scene/fallback';
 
 let cleanupProcess: (() => void) | null = null;
 let cleanupMenuGrid: (() => void) | null = null;
@@ -101,18 +100,21 @@ function renderProcess(): void {
   ].join('');
 }
 
-function initHeroSceneLazy(): void {
-  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
-  if (!canvas) return;
+function initHeroSlideshow(): void {
+  if (prefersReducedMotion()) return;
 
-  if (prefersReducedMotion() || !isWebGLAvailable()) {
-    showFallbackSVG(canvas.parentElement ?? canvas);
-    return;
-  }
+  const slides = document.querySelectorAll<HTMLImageElement>('.hero__slide');
+  if (slides.length <= 1) return;
 
-  import('./scene/hero-oven').then(({ initHeroScene }) => {
-    initHeroScene(canvas);
-  });
+  let current = 0;
+
+  setInterval(() => {
+    const prev = slides[current];
+    current = (current + 1) % slides.length;
+    const next = slides[current];
+    if (prev) prev.classList.remove('hero__slide--active');
+    if (next) next.classList.add('hero__slide--active');
+  }, 5000);
 }
 
 function initMotionLazy(): void {
@@ -136,27 +138,9 @@ function initMotionLazy(): void {
   });
 }
 
-function initHeroSlideshow(): void {
-  if (prefersReducedMotion()) return;
-
-  const slides = document.querySelectorAll<HTMLImageElement>('.hero__slide');
-  if (slides.length <= 1) return;
-
-  let current = 0;
-
-  setInterval(() => {
-    const prev = slides[current];
-    current = (current + 1) % slides.length;
-    const next = slides[current];
-    if (prev) prev.classList.remove('hero__slide--active');
-    if (next) next.classList.add('hero__slide--active');
-  }, 5000);
-}
-
 function init(): void {
   renderMenu();
   renderProcess();
-  initHeroSceneLazy();
   initHeroSlideshow();
   initMotionLazy();
 }
